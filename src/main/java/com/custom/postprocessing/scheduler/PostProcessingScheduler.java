@@ -209,8 +209,8 @@ public class PostProcessingScheduler {
 					prepareMap(postProcessMap, stateAndSheetName, fileName);
 				} else if (checkPageType(fileName)) {
 					if (PostProcessingConstant.PDF_TYPE.equals(FilenameUtils.getExtension(fileName))) {
-						CloudBlob cloudBlob = (CloudBlob) blobItem;
-						cloudBlob.deleteIfExists();
+						//CloudBlob cloudBlob = (CloudBlob) blobItem;
+						//cloudBlob.deleteIfExists();
 						continue;
 					}
 					prepareMap(postProcessMap, getSheetNumber(fileName, blobItem),
@@ -218,8 +218,8 @@ public class PostProcessingScheduler {
 				} else {
 					logger.info("unable to process:invalid document type ");
 				}
-				CloudBlob cloudBlob = (CloudBlob) blobItem;
-				cloudBlob.deleteIfExists();
+				//CloudBlob cloudBlob = (CloudBlob) blobItem;
+				//cloudBlob.deleteIfExists();
 			}
 			if (postProcessMap.size() > 0) {
 				message = mergePDF(postProcessMap, currentDate);
